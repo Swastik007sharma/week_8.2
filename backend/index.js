@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.json())
 
 const mainRouter = require("./Routes/index");
-const router = require("./Routes/index");
+
 app.use("/api/v1/", mainRouter)
 
 app.get('/', function (req, res, next) {

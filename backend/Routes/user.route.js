@@ -122,11 +122,9 @@ router.get("/bulk", async (req, res) => {
 			{
 				firstName: {
 					$regex: filter,
-					$option: "i",
 				},
 				lastName: {
-					$regex: lastName,
-					$option: "i",
+					$regex: filter,
 				},
 			},
 		],
@@ -157,3 +155,5 @@ router.get("/balance", authMiddleware, async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 });
+
+module.exports = router;
